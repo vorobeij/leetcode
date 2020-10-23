@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="leetcode.Solution_3SumTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-23T13:22:23" hostname="Evgeniys-MacBook-Pro.local" time="0.097">
+  <properties/>
+  <testcase name="extreme list" classname="leetcode.Solution_3SumTest" time="0.097"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
