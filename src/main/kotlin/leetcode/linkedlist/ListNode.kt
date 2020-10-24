@@ -15,7 +15,17 @@ fun List<Int>.toNodesReverced(): ListNode {
     return res
 }
 
-fun List<Int>.toNodes(): ListNode {
+fun ListNode.last(): ListNode {
+    var r: ListNode = this
+    while (r.next != null) {
+        if (r.next != null)
+            r = r.next!!
+    }
+    return r
+}
+
+fun List<Int>.toNodes(): ListNode? {
+    if (this.isEmpty()) return null
     val res = ListNode(first())
     val r = this
     var node: ListNode? = res
