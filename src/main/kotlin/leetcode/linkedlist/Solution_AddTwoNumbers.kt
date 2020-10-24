@@ -2,10 +2,6 @@ package leetcode.linkedlist
 
 class Solution_AddTwoNumbers {
 
-    class ListNode(var `val`: Int) {
-        var next: ListNode? = null
-    }
-
     fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? {
         val node = ListNode(0)
         add(l1, l2, node)
