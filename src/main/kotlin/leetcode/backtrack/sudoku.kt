@@ -1,7 +1,7 @@
 package leetcode.backtrack
 
 fun main() {
-    Solution().solveSudoku(
+    SolutionSudoku().solveSudoku(
         arrayOf(
             charArrayOf('5', '3', '.', '.', '7', '.', '.', '.', '.'),
             charArrayOf('6', '.', '.', '1', '9', '5', '.', '.', '.'),
@@ -16,7 +16,7 @@ fun main() {
     )
 }
 
-class Solution {
+class SolutionSudoku {
     val SIZE = 9
     val EMPTY_CELL = '.'
     fun solveSudoku(board: Array<CharArray>): Unit {
