@@ -3,13 +3,13 @@ package tests
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.newSingleThreadContext
 import kotlinx.coroutines.runBlocking
 import java.util.concurrent.locks.ReentrantLock
@@ -43,8 +43,8 @@ suspend fun doWorld(): Int {
     return 2
 }
 
-suspend fun launchParallel(tasks: List<suspend CoroutineScope.() -> Unit>) = coroutineScope {
-    tasks.forEach {
-        launch(Dispatchers.IO) { it.invoke(this@coroutineScope) }
-    }
+suspend fun launchParallel(tasks: List<suspend CoroutineScope.() -> String>): List<String> = coroutineScope {
+    return@coroutineScope tasks
+        .map { async(Dispatchers.IO) { it.invoke(this@coroutineScope) } }
+        .map { it.await() }
 }

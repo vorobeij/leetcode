@@ -46,3 +46,5 @@ fun ListNode.string(): String {
     }
     return "[${list.joinToString(",")}]"
 }
+
+fun nodes(vararg nodes: Int) = (nodes).toList().toNodes()

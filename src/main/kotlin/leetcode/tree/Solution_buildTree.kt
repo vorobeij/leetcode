@@ -1,13 +1,45 @@
 package leetcode
 
-import java.util.*
+import java.util.Stack
+
+class TreeNode(var `val`: Int) {
+    var left: TreeNode? = null
+    var right: TreeNode? = null
+
+    override fun toString(): String {
+        val list = mutableListOf<Int?>()
+        stringHelper(this, list)
+        return list.joinToString(",")
+    }
+
+    private fun stringHelper(root: TreeNode?, buffer: MutableList<Int?>): List<Int?> {
+        if (root == null) return buffer
+
+        buffer.add(root.`val`)
+        stringHelper(root.left, buffer)
+        stringHelper(root.right, buffer)
+        return buffer
+    }
+}
+
+fun String.toTree(): TreeNode? {
+    val values = split(",").map { if (it == "null") null else it.toInt() }.toMutableList()
+    val treeNode = TreeNode(values.first()!!)
+    values.removeAt(0)
+    fun helper(root: TreeNode?, v: MutableList<Int?>) {
+        if (v.isEmpty()) return
+        root?.left = v[0]?.let { TreeNode(it) }
+        values.removeAt(0)
+        root?.right = v[0]?.let { TreeNode(it) }
+        values.removeAt(0)
+        root?.left.let { helper(it, v) }
+        root?.right.let { helper(it, v) }
+    }
+    helper(treeNode, values)
+    return treeNode
+}
 
 class Solution_buildTree {
-
-    class TreeNode(var `val`: Int) {
-        var left: TreeNode? = null
-        var right: TreeNode? = null
-    }
 
     fun buildTree(preorder: IntArray, inorder: IntArray): TreeNode? {
         return TreeBuilder(preorder, inorder).build()
@@ -25,8 +57,7 @@ class Solution_buildTree {
     }
 
     class TreeBuilder(
-        private val preorder: IntArray,
-        private val inorder: IntArray
+        private val preorder: IntArray, private val inorder: IntArray
     ) {
 
         var preorderIndex = 0
