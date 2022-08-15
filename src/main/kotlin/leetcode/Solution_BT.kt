@@ -54,11 +54,11 @@ object Solution_BT {
         bt.root = BinaryTree.Node(1)
         var cur = bt.root
         cur!!.left = BinaryTree.Node(2)
-        cur!!.left!!.left = BinaryTree.Node(4)
-        cur!!.left!!.right = BinaryTree.Node(5)
-        cur!!.right = BinaryTree.Node(3)
-        cur!!.right!!.left = BinaryTree.Node(6)
-        cur!!.right!!.right = BinaryTree.Node(7)
+        cur.left!!.left = BinaryTree.Node(4)
+        cur.left!!.right = BinaryTree.Node(5)
+        cur.right = BinaryTree.Node(3)
+        cur.right!!.left = BinaryTree.Node(6)
+        cur.right!!.right = BinaryTree.Node(7)
 
         //        bt.inorder { println(it?.value.toString()) }
 //        bt.breadth { println(it?.value.toString()) }

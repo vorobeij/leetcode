@@ -30,10 +30,10 @@ class Solution_Intersection_of_Two_Linked_Lists {
         var hB = headB.get(sizeB - Math.min(sizeA, sizeB))
 
         while (hA?.next != null && hB?.next != null) {
-            if (hA?.next == hB?.next)
-                return hA?.next
-            hA = hA?.next
-            hB = hB?.next
+            if (hA.next == hB.next)
+                return hA.next
+            hA = hA.next
+            hB = hB.next
         }
 
         return null
