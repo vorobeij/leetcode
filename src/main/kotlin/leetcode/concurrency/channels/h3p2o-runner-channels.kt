@@ -2,7 +2,6 @@ package leetcode.concurrency.channels
 
 import kotlin.system.measureTimeMillis
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onCompletion
@@ -17,7 +16,6 @@ import leetcode.concurrency.threads.totalP
 
 fun main() = runBlocking {
     val t = measureTimeMillis {
-
         val sb = StringBuilder()
         val h3P2O = H3P2OChannels()
         val collectionJob: Job = h3P2O.outputFlow
@@ -46,4 +44,3 @@ private fun CoroutineScope.runx(total: Int, function: suspend () -> Unit): List<
         }
     }
 }
-

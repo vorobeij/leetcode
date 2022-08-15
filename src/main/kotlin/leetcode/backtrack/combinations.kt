@@ -18,10 +18,10 @@ class SolutionCombinations {
         left: Int = 1,
         currentList: MutableList<Int> = mutableListOf(left)
     ) {
-
         if (currentList.size == k) {
-            if (res.contains(currentList))
+            if (res.contains(currentList)) {
                 return
+            }
 
             res.add(currentList)
         }
@@ -31,7 +31,7 @@ class SolutionCombinations {
                 backtrack(res, n, k, i)
             }
         }
-        if (currentList.size < k)
+        if (currentList.size < k) {
             for (i in left + 1..n) {
                 // add items to the current list
                 val list = mutableListOf<Int>()
@@ -39,5 +39,6 @@ class SolutionCombinations {
                 list.add(i)
                 backtrack(res, n, k, i, list)
             }
+        }
     }
 }

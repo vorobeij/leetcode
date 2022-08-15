@@ -18,8 +18,9 @@ fun List<Int>.toNodesReverced(): ListNode {
 fun ListNode.last(): ListNode {
     var r: ListNode = this
     while (r.next != null) {
-        if (r.next != null)
+        if (r.next != null) {
             r = r.next!!
+        }
     }
     return r
 }

@@ -1,6 +1,6 @@
 package leetcode
 
-import java.util.*
+import java.util.Stack
 
 class BinaryTree {
 
@@ -28,11 +28,9 @@ class BinaryTree {
     }
 
     fun breadth(onEach: (node: Node?) -> Unit) {
-
         val q = mutableListOf<Node?>()
         q.add(root)
         while (q.isNotEmpty()) {
-
             val node = q.first()
             q.removeFirst()
             onEach(node)
@@ -42,7 +40,6 @@ class BinaryTree {
     }
 
     fun depth(onEach: (node: Node?) -> Unit) {
-
     }
 }
 

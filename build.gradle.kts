@@ -1,6 +1,7 @@
 plugins {
     java
     kotlin("jvm") version "1.7.10"
+    id("io.gitlab.arturbosch.detekt").version("1.21.0")
 }
 
 group = "org.example"
@@ -17,3 +18,20 @@ dependencies {
     testImplementation("junit", "junit", "4.12")
     testImplementation("com.google.truth:truth:1.1.3")
 }
+
+val javaVersion = JavaVersion.VERSION_17
+
+apply(plugin = "io.gitlab.arturbosch.detekt")
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor(0, "seconds")
+}
+
+tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
+    jvmTarget = javaVersion.toString()
+}
+tasks.withType<io.gitlab.arturbosch.detekt.DetektCreateBaselineTask>().configureEach {
+    jvmTarget = javaVersion.toString()
+}
+
+apply(from = "${rootDir.absolutePath}/gradle/detekt/detekt-config.gradle")

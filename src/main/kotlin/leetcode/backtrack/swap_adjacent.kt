@@ -1,6 +1,5 @@
 package leetcode.backtrack
 
-
 class SolutionPow {
     fun myPow(x: Double, n: Int): Double {
         var x = x
@@ -19,7 +18,7 @@ class SolutionPow {
             }
         }
 
-        //for negative power
+        // for negative power
         return if (n < 0) 1.0 / ans else ans
     }
 }

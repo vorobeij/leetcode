@@ -21,7 +21,6 @@ object Solution2 {
         }
 
         while (i < A.size) {
-
             set.add(A[i])
             if (set.size < 3) {
                 sliceSize++
@@ -56,4 +55,3 @@ object Solution2 {
         return longest
     }
 }
-

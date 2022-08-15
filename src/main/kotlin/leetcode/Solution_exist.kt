@@ -3,7 +3,6 @@ package leetcode
 class Solution_exist {
 
     fun exist(board: Array<CharArray>, word: String): Boolean {
-
         for (y in board.indices) {
             for (x in board[0].indices) {
                 if (BFS(board).bfs(word, 0, x, y)) return true

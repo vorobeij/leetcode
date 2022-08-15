@@ -14,7 +14,6 @@ class H3P2OChannels {
     private val channelP = Channel<suspend () -> Unit>()
 
     suspend fun collect(molecules: Int) {
-
         var countMolecules = 0
 
         while (countMolecules < molecules) {

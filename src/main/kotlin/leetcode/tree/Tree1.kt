@@ -27,16 +27,16 @@ class Solution {
         val left = traverseTree(root.left)
         val right = traverseTree(root.right)
         val max2 = mutableListOf(
-                right + root.`val`,
-                left + root.`val`,
-                root.`val`
-            ).maxOrNull()!!
+            right + root.`val`,
+            left + root.`val`,
+            root.`val`
+        ).maxOrNull()!!
 
         max = mutableListOf(
-                left + right + root.`val`,
-                max2,
-                max
-            ).maxOrNull()!!
+            left + right + root.`val`,
+            max2,
+            max
+        ).maxOrNull()!!
         return max2
     }
 }

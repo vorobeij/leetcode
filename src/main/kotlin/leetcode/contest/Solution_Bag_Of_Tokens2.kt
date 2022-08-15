@@ -1,6 +1,6 @@
 package leetcode.contest
 
-import java.util.*
+import java.util.Arrays
 
 class Solution_Bag_Of_Tokens2 {
 

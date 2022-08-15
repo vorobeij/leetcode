@@ -11,7 +11,7 @@ fun main() {
             charArrayOf('7', '.', '.', '.', '2', '.', '.', '.', '6'),
             charArrayOf('.', '6', '.', '.', '.', '.', '2', '8', '.'),
             charArrayOf('.', '.', '.', '4', '1', '9', '.', '.', '5'),
-            charArrayOf('.', '.', '.', '.', '8', '.', '.', '7', '9'),
+            charArrayOf('.', '.', '.', '.', '8', '.', '.', '7', '9')
         )
     )
 }
@@ -19,7 +19,7 @@ fun main() {
 class SolutionSudoku {
     val SIZE = 9
     val EMPTY_CELL = '.'
-    fun solveSudoku(board: Array<CharArray>): Unit {
+    fun solveSudoku(board: Array<CharArray>) {
         backtrack(board)
         output(board)
     }
@@ -34,7 +34,8 @@ class SolutionSudoku {
     }
 
     data class Cell(
-        val row: Int, val col: Int
+        val row: Int,
+        val col: Int
     )
 
     private fun backtrack(board: Array<CharArray>): Boolean {
@@ -99,5 +100,4 @@ class SolutionSudoku {
         //        println("[${board.toList().joinToString() { "[${it.joinToString(",") { "\"${it}\"" }}]" }}]")
         println("${board.toList().joinToString("\n") { "[${it.joinToString(" ")}]" }}\n\n")
     }
-
 }

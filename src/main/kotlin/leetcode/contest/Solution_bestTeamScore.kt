@@ -9,7 +9,6 @@ class Solution_bestTeamScore {
     fun bestTeamScore(scores: IntArray, ages: IntArray): Int {
         val size = scores.size
 
-
         val players = mutableListOf<Player>()
         for (i in scores.indices) {
             players.add(Player(scores[i], ages[i]))

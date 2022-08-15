@@ -57,7 +57,8 @@ class Solution_buildTree {
     }
 
     class TreeBuilder(
-        private val preorder: IntArray, private val inorder: IntArray
+        private val preorder: IntArray,
+        private val inorder: IntArray
     ) {
 
         var preorderIndex = 0
@@ -93,11 +94,9 @@ class Solution_buildTree {
     }
 
     fun preorder(root: TreeNode?, onEach: (node: TreeNode?) -> Unit) {
-
         val q = mutableListOf<TreeNode?>()
         q.add(root)
         while (q.isNotEmpty()) {
-
             val node = q.first()
             q.removeFirst()
             onEach(node)

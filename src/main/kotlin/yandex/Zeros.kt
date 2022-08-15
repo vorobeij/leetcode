@@ -5,7 +5,6 @@ import java.lang.Integer.max
 object Zeros {
 
     fun maxOnesSequence(array: List<Int>): Int {
-
         var seqStart = -1
         val oneRanges = mutableListOf<IntRange>()
         for (i in array.indices) {

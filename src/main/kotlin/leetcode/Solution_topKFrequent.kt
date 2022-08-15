@@ -6,6 +6,6 @@ class Solution_topKFrequent {
         for (num in nums) {
             map[num] = (map[num] ?: 0) + 1
         }
-        return map.entries.sortedByDescending { it.value }.map{it.key}.take(k).toIntArray()
+        return map.entries.sortedByDescending { it.value }.map { it.key }.take(k).toIntArray()
     }
 }

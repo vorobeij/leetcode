@@ -5,7 +5,6 @@ class Solution_winnerSquareGame {
     val losingSet = mutableSetOf<Int>()
 
     fun winnerSquareGame(n: Int): Boolean {
-
         for (i in 1 until n) {
             canWin(i)
         }

@@ -12,7 +12,6 @@ import leetcode.concurrency.threads.totalP
 
 fun main() = runBlocking {
     val t = measureTimeMillis {
-
         val sb = StringBuilder()
         val h3P2O = H3P2OActor {
             println(sb.toString().toCharArray().sorted().joinToString(""))
@@ -35,4 +34,3 @@ private fun CoroutineScope.runx(total: Int, function: suspend () -> Unit): List<
         }
     }
 }
-

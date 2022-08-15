@@ -65,4 +65,3 @@ class Solution_mergeTwoLists {
         return link
     }
 }
-

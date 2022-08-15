@@ -15,8 +15,8 @@ class GetResult(val response: CompletableDeferred<Int>) : CounterMsg()
 @OptIn(ObsoleteCoroutinesApi::class)
 fun CoroutineScope.counterActor() = actor<CounterMsg> {
     var counter = 0
-    for(msg in channel){
-        when(msg){
+    for (msg in channel) {
+        when (msg) {
             is CounterIncrement -> counter += msg.increment
             is GetResult -> msg.response.complete(counter)
         }
@@ -26,12 +26,11 @@ fun CoroutineScope.counterActor() = actor<CounterMsg> {
 fun main() = runBlocking {
     val counter = counterActor()
 
-    withContext(Dispatchers.IO){
+    withContext(Dispatchers.IO) {
         counter.send(CounterIncrement())
     }
     val response = CompletableDeferred<Int>()
     counter.send(GetResult(response))
     println(response.await())
     counter.close()
-
 }

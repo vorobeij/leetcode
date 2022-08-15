@@ -55,8 +55,7 @@ class Solution_SetMatrixZeroes {
         }
     }
 
-    fun setZeroes(matrix: Array<IntArray>): Unit {
-
+    fun setZeroes(matrix: Array<IntArray>) {
         val m = Matrix(matrix)
         val points = m.getZeroes()
         m.setZeroes(points)

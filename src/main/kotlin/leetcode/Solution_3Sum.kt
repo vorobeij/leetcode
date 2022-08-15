@@ -1,7 +1,5 @@
 package leetcode
 
-import java.lang.Math.min
-
 class Solution_3Sum {
 
     companion object {

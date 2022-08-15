@@ -1,6 +1,5 @@
 package leetcode.linkedlist
 
-
 /**
  * Example:
  * var ti = Node(5)

@@ -3,7 +3,6 @@ package leetcode
 class Solution_Increase_Triplet {
 
     fun increasingTriplet(nums: IntArray): Boolean {
-
         if (nums.isEmpty() || nums.size < 3) return false
 
         var min1 = Int.MAX_VALUE

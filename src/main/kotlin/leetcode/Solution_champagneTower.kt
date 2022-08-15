@@ -25,7 +25,6 @@ class Solution_champagneTower {
     }
 
     fun champagneTower(poured: Int, query_row: Int, query_glass: Int): Double {
-
         if (poured > (query_row + 1) * (query_row + 2)) return 1.0
 
         val head = Node(0.0)
@@ -48,7 +47,6 @@ class Solution_champagneTower {
         q.add(root)
 
         while (q.isNotEmpty()) {
-
         }
     }
 

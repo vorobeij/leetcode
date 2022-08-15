@@ -19,7 +19,4 @@ object Solution {
         }
         return min
     }
-
 }
-
-

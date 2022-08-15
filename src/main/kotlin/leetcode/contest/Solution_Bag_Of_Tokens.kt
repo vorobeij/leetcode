@@ -12,9 +12,7 @@ class Solution_Bag_Of_Tokens {
             return canPlayFaceUp() || canPlayFaceDown()
         }
 
-        fun canPlayFaceUp(): Boolean {
-            return tokens.any { it <= P }
-        }
+        fun canPlayFaceUp(): Boolean = tokens.any { it <= P }
 
         fun playFaceUp() {
             val token = tokens.find { it <= P } ?: error("can not play face up")
@@ -23,9 +21,7 @@ class Solution_Bag_Of_Tokens {
             score++
         }
 
-        fun canPlayFaceDown(): Boolean {
-            return score >= 1 && tokens.size > 1
-        }
+        fun canPlayFaceDown(): Boolean = score >= 1 && tokens.size > 1
 
         fun playFaceDown() {
             val token = tokens.last()
@@ -34,9 +30,7 @@ class Solution_Bag_Of_Tokens {
             score--
         }
 
-        override fun toString(): String {
-            return "p = ${P}, score = ${score}, tokens = [${tokens.joinToString(", ")}]"
-        }
+        override fun toString(): String = "p = $P, score = $score, tokens = [${tokens.joinToString(", ")}]"
     }
 
     fun bagOfTokensScore(tokens: IntArray, P: Int): Int {

@@ -6,7 +6,6 @@ object SequencesCompare {
 
     @JvmStatic
     fun main(args: Array<String>) {
-
         val f = File("input.txt")
         val line = f.readLines().first()
         val lines = line.split(" ").map { it.trim() }.filter { it.isNotBlank() }
@@ -16,7 +15,6 @@ object SequencesCompare {
     }
 
     fun compare(s1: String, s2: String): Boolean {
-
         return withBackspaces(s1) == withBackspaces(s2)
     }
 

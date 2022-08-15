@@ -4,9 +4,9 @@ import kotlin.system.measureTimeMillis
 
 val molecules = 25000
 
-val maxO =  1
-val maxH =  3
-val maxP =  2
+val maxO = 1
+val maxH = 3
+val maxP = 2
 
 val totalO = molecules * maxO
 val totalH = molecules * maxH
@@ -14,7 +14,6 @@ val totalP = molecules * maxP
 
 fun main() {
     val t = measureTimeMillis {
-
         val sb = StringBuilder()
 
         val o = Runnable { sb.append("O") }

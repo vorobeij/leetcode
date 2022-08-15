@@ -7,14 +7,14 @@ class Solution_Longest_Palindromic_Substring {
         while (start + i < end - i && s[start + i] == s[end - i]) {
             i++
         }
-        if ((end - start) % 2 == 0)
+        if ((end - start) % 2 == 0) {
             return i == (end - start) / 2
-        else
+        } else {
             return i == (end - start) / 2 + 1
+        }
     }
 
     fun longestPalindrome(s: String): String {
-
         var palindrome: String = ""
 
         for (i in s.indices) {
