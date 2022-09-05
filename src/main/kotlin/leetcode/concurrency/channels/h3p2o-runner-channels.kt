@@ -3,6 +3,7 @@ package leetcode.concurrency.channels
 import kotlin.system.measureTimeMillis
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onEach
@@ -27,11 +28,11 @@ fun main() = runBlocking {
             .launchIn(this)
 
         val jobs = mutableListOf<Job>()
-        jobs.addAll(runx(totalH) { h3P2O.h { sb.append("H") } })
-        jobs.addAll(runx(totalO) { h3P2O.o { sb.append("O") } })
-        jobs.addAll(runx(totalP) { h3P2O.p { sb.append("P") } })
+        jobs.addAll(runx(totalH) { h3P2O.h { delay(100); sb.append("H") } })
+        jobs.addAll(runx(totalO) { h3P2O.o { delay(10); sb.append("O") } })
+        jobs.addAll(runx(totalP) { h3P2O.p { delay(50); sb.append("P") } })
         h3P2O.collect(molecules)
-        joinAll(*jobs.toTypedArray())
+        jobs.joinAll()
         collectionJob.cancel()
     }
     println(t)

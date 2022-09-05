@@ -2,7 +2,7 @@ package leetcode.concurrency.threads
 
 import kotlin.system.measureTimeMillis
 
-val molecules = 25000
+val molecules = 10
 
 val maxO = 1
 val maxH = 3
